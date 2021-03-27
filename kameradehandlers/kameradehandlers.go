@@ -40,7 +40,7 @@ func messageReactionRemoveHandle(s *discordgo.Session, m *discordgo.MessageReact
 		return
 	}
 
-	err = amongusevents.ReSyncEvent(s, message)
+	err = kamerade.ReSyncEvent(s, message)
 	if err != nil {
 		log.Error(errors.WithMessage(err, "Error resyncing event state in reaction remove handler"))
 	}
@@ -67,7 +67,7 @@ func messageReactionAddHandle(s *discordgo.Session, m *discordgo.MessageReaction
 		if err != nil {
 			log.Error(errors.WithMessage(err, "Error removing change time reaction in message reaction add handler for accept reaction event"))
 		}
-		err = amongusevents.ReSyncEvent(s, message)
+		err = kamerade.ReSyncEvent(s, message)
 		if err != nil {
 			log.Error(errors.WithMessage(err, "Error resyncing event state in reaction add handler for accept reaction event"))
 		}
@@ -81,7 +81,7 @@ func messageReactionAddHandle(s *discordgo.Session, m *discordgo.MessageReaction
 		if err != nil {
 			log.Error(errors.WithMessage(err, "Error removing change time reaction in message reaction add handler for decline reaction event"))
 		}
-		err = amongusevents.ReSyncEvent(s, message)
+		err = kamerade.ReSyncEvent(s, message)
 		if err != nil {
 			log.Error(errors.WithMessage(err, "Error resyncing event state in reaction add handler for decline reaction event"))
 		}
@@ -94,7 +94,7 @@ func messageReactionAddHandle(s *discordgo.Session, m *discordgo.MessageReaction
 		if err != nil {
 			log.Error(errors.WithMessage(err, "Error removing decline reaction in message reaction add handler for change time reaction event"))
 		}
-		err = amongusevents.ReSyncEvent(s, message)
+		err = kamerade.ReSyncEvent(s, message)
 		if err != nil {
 			log.Error(errors.WithMessage(err, "Error resyncing event state in reaction add handler for change time reaction event"))
 		}
@@ -133,7 +133,7 @@ func commandHandler(s *discordgo.Session, m *discordgo.MessageCreate) {
 			title := strings.Trim(m.Content[18:len(m.Content)], "\"")
 
 			log.Infof("Creating new among event with title: %s for user: %s", title, m.Author.Username)
-			err = amongusevents.CreateEvent(s, title, m.ChannelID)
+			err = kamerade.CreateEvent(s, title, m.ChannelID)
 			if err != nil {
 				log.Error(errors.WithMessage(err, "Error creating event in create event command handler"))
 			}
