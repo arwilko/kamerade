@@ -1,4 +1,4 @@
-package kamerade-handlers
+package kameradehandlers
 
 import (
 	"fmt"
@@ -6,7 +6,7 @@ import (
 	"strings"
 
 	"github.com/bwmarrin/discordgo"
-	"github.com/arwilko/kamerade/kamerade-events"
+	"github.com/arwilko/kamerade/kamerade"
 	"github.com/pkg/errors"
 	log "github.com/sirupsen/logrus"
 )
