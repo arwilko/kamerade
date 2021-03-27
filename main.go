@@ -8,7 +8,7 @@ import (
 	"syscall"
 
 	"github.com/bwmarrin/discordgo"
-	"github.com/arwilko/kamerade/kamerade-handlers"
+	"github.com/arwilko/kamerade/kameradehandlers"
 	"github.com/pkg/errors"
 	log "github.com/sirupsen/logrus"
 )
