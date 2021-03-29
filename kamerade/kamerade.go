@@ -148,8 +148,8 @@ func (s *amongUsEventState) updateEmbedMessageFromState(session *discordgo.Sessi
 			Description: "\u200B\n",
 			Fields: []*discordgo.MessageEmbedField{
 				&discordgo.MessageEmbedField{Name: fmt.Sprintf("💯 **__I'll Be There__ (%d) :**", len(s.eventAttendees)), Value: eventAttendeesText, Inline: false},
-				&discordgo.MessageEmbedField{Name: fmt.Sprintf("🙅 **__Can't Make it__ (%d) :**", len(s.eventMaybe)), Value: eventMaybeText, Inline: false},
-				&discordgo.MessageEmbedField{Name: fmt.Sprintf("‍:catrecline: **__Maybe__ (%d) :**", len(s.eventCantAttend)), Value: eventCantAttendText, Inline: false},
+				&discordgo.MessageEmbedField{Name: fmt.Sprintf("🙅 **__Can't Make it__ (%d) :**", len(s.eventCantAttend)), Value: eventCantAttendText, Inline: false},
+				&discordgo.MessageEmbedField{Name: fmt.Sprintf("‍:catrecline: **__Maybe__ (%d) :**", len(s.eventMaybe)), Value: eventMaybeText, Inline: false},
 			},
 		},
 	)
